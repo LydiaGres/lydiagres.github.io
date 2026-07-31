@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lýdia Grešáková — Research &amp; Photography</title>
+<meta name="description" content="Sociologist working on feminist spatial practice, and analog documentary photographer. Selected research, talks, exhibitions, and photo series.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Lýdia Grešáková — portfolio
+   Two practices, one register: research on the left column logic,
+   analog photography styled as a contact sheet.
+   ============================================================ */
+
+:root {
+  --paper: #EDEAE1;
+  --paper-alt: #E2DECF;
+  --ink: #17181A;
+  --ink-soft: #55564F;
+  --ink-faint: #8B8B80;
+  --accent: #9E1B1B;
+  --rule: #C9C2AF;
+  --display: 'Space Grotesk', sans-serif;
+  --serif: 'Newsreader', serif;
+  --mono: 'IBM Plex Mono', monospace;
+  --max: 780px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+a:not(.nav-link):not(.frame) { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+a:not(.nav-link):not(.frame):hover { color: var(--accent); }
+
+img { max-width: 100%; display: block; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  padding: 48px 32px;
+  border-right: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-top .name {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  margin: 0 0 6px;
+}
+
+.sidebar-top .role {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin: 0 0 36px;
+  letter-spacing: 0.02em;
+}
+
+.nav-link {
+  display: block;
+  font-family: var(--mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--ink-soft);
+  padding: 7px 0;
+  border-left: 2px solid transparent;
+  padding-left: 12px;
+  margin-left: -13px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.nav-link:hover, .nav-link:focus-visible {
+  color: var(--ink);
+  border-left-color: var(--accent);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 32px;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  padding: 3px 7px;
+  border-radius: 2px;
+}
+
+.sidebar-bottom {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.sidebar-bottom a { text-decoration: underline; text-decoration-color: var(--rule); }
+.sidebar-bottom a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+/* ---------- Main ---------- */
+
+main { padding: 64px 48px 120px; }
+
+.intro {
+  max-width: var(--max);
+  margin: 0 0 96px;
+}
+
+.intro p {
+  font-size: 20px;
+  margin: 0 0 18px;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin: 0 0 10px;
+  display: block;
+}
+
+section { scroll-margin-top: 24px; }
+
+h2.section-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 34px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 0 0 40px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ---------- Research (register / index card list) ---------- */
+
+.entry {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 28px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  max-width: var(--max);
+}
+
+.entry:first-child { padding-top: 0; }
+
+.entry .year {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  padding-top: 3px;
+}
+
+.entry h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+
+.entry .kind {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+
+.entry p { margin: 0 0 12px; font-size: 16.5px; color: var(--ink); }
+
+.entry .credit {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-top: 8px;
+}
+
+.entry .link {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+}
+
+.entry img { margin: 14px 0 4px; border: 1px solid var(--rule); }
+
+/* year group header inside the list */
+.year-marker {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 44px 0 4px;
+  max-width: var(--max);
+}
+.year-marker:first-of-type { margin-top: 0; }
+
+/* ---------- Photography (contact sheet motif) ---------- */
+
+.series {
+  margin: 0 0 88px;
+  max-width: 1040px;
+}
+
+.series-head {
+  margin-bottom: 20px;
+}
+
+.series-head h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 0 0 6px;
+}
+
+.series-head .meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.series-head p {
+  max-width: 640px;
+  font-size: 16.5px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.contact-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--ink);
+  padding: 2px;
+  margin-top: 22px;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--paper-alt);
+  display: block;
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(6%);
+}
+
+.frame::before, .frame::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 8px;
+  background-image: repeating-linear-gradient(90deg, var(--paper) 0 6px, transparent 6px 14px);
+  background-color: var(--ink);
+  z-index: 2;
+}
+.frame::before { top: 0; }
+.frame::after { bottom: 0; }
+
+.frame .fnum {
+  position: absolute;
+  bottom: 12px;
+  left: 6px;
+  z-index: 3;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: #fff;
+  background: rgba(0,0,0,0.55);
+  padding: 1px 5px;
+}
+
+.frame.empty {
+  border: 1px dashed var(--ink-faint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+}
+
+.frame.empty span {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  line-height: 1.5;
+}
+
+/* ---------- Hero plate ---------- */
+
+.hero-plate {
+  max-width: 980px;
+  margin: 0 0 56px;
+}
+
+.hero-plate img {
+  width: 100%;
+  border: 1px solid var(--rule);
+}
+
+.hero-plate figcaption {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.hero-plate .cap-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  max-width: 560px;
+}
+
+.hero-plate .cap-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  white-space: nowrap;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .hero-plate figcaption { grid-template-columns: 1fr; }
+  .hero-plate .cap-meta { text-align: left; }
+}
+
+/* ---------- About ---------- */
+
+.about { max-width: var(--max); }
+.about p { font-size: 18px; }
+
+/* ---------- Footer ---------- */
+
+footer {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  padding: 40px 48px 64px;
+  border-top: 1px solid var(--rule);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar {
+    position: relative;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 24px;
+  }
+  .sidebar-top { display: flex; align-items: baseline; gap: 16px; }
+  .sidebar-top .name { font-size: 18px; margin: 0; }
+  .sidebar-top .role { display: none; }
+  .tags, .sidebar-bottom { display: none; }
+  nav { display: flex; gap: 18px; }
+  .nav-link { padding: 0; margin: 0; border-left: none; }
+  main { padding: 40px 24px 80px; }
+  .entry { grid-template-columns: 1fr; gap: 8px; }
+  .contact-strip { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .contact-strip { grid-template-columns: 1fr; }
+}
+
+/* keyboard focus visibility */
+a:focus-visible, .frame:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <p class="name">Lýdia<br>Grešáková</p>
+      <p class="role">sociologist /<br>analog photographer</p>
+      <nav>
+        <a class="nav-link" href="#research">Research</a>
+        <a class="nav-link" href="#photography">Photography</a>
+        <a class="nav-link" href="#about">About</a>
+      </nav>
+      <div class="tags">
+        <span class="tag">Researching</span>
+        <span class="tag">Speaking</span>
+        <span class="tag">Writing</span>
+        <span class="tag">Coordinating</span>
+        <span class="tag">Exhibiting</span>
+        <span class="tag">Photographing</span>
+      </div>
+    </div>
+    <div class="sidebar-bottom">
+      <a href="mailto:lydia@spolka.cc">lydia@spolka.cc</a>
+    </div>
+  </aside>
+
+  <main>
+
+    <figure class="hero-plate">
+      <img src="images/run.jpg" alt="A herd of young fallow deer running along a hillside inside fenced private land on the outskirts of Bratislava">
+      <figcaption>
+        <span class="cap-text">Run. A herd of young fallow deer flees across fenced private property on the edge of Bratislava, looking for a way out. The image holds a moment of frenzy and intrusion, making visible the more than human voices caught inside a landscape of enclosure and privilege, the tension between open space and its privatisation, movement and surveillance.</span>
+        <span class="cap-meta">Kodak T-Max, 35mm<br>Bratislava, edge of the city</span>
+      </figcaption>
+    </figure>
+
+    <div class="intro">
+      <span class="eyebrow">Index</span>
+      <p>Lýdia Grešáková is a sociologist focusing on feminist values, pro-climate spatial practices, and the role of critical art in politics. She researches marginalized voices in Central Eastern Europe, connecting local stories to global contexts. She is a member of Spolka, the Slovak non-profit architecture and sociology studio, and was previously a research fellow at K LAB, TU Berlin, contributing to projects on critical mapping and socio-environmental transformation.</p>
+      <p>Alongside this research, she works with analog documentary photography, using the camera as a second field notebook. Selected series below.</p>
+    </div>
+
+    <section id="research">
+      <h2 class="section-title">Selected research</h2>
+
+      <p class="year-marker">Forthcoming</p>
+
+      <div class="entry">
+        <div class="year">2025</div>
+        <div>
+          <span class="kind">Exhibiting</span>
+          <h3>Czech and Slovak Spatial Practice for 99%</h3>
+          <p>How to create spaces that truly reflect the needs of the communities concerned. The exhibition offers a view of what spatial practice can mean for the so called 99%, reading space as a living entity made of buildings, social connections, rules, and daily rituals. A record of contemporary Czech and Slovak initiatives, and a call for planning that is inclusive and equitable rather than shaped around the most privileged one percent.</p>
+          <p class="credit">Curators and research authors: Lýdia Grešáková, Zuzana Tabačková</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2025</div>
+        <div>
+          <span class="kind">Writing</span>
+          <h3>Data, Stories, Learning and Staying with the Trouble: Feminist Spatial Practice in Slovakia and the Czech Republic</h3>
+          <p>Article, <em>Dimensions. Journal of Architectural Knowledge.</em></p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2025</div>
+        <div>
+          <span class="kind">Writing</span>
+          <h3>Drawing common futures: with mapping workshops and images towards climate caring spatial practice in Slovakia</h3>
+          <p>Book chapter, with Viktória Mravčáková. In: Renner, Dietzsch, Tschoepe, Käser, Balzan (eds.), <em>Participatory Images: Fostering Dialogue Through Image Making in the Context of Urban Planning</em>. Bielefeld: Transcript Verlag.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2025</div>
+        <div>
+          <span class="kind">Writing</span>
+          <h3>Housing in Times of Crisis</h3>
+          <p>Edited volume and book chapter, with Viktória Mravčáková (eds.). Košice: Spolka.</p>
+        </div>
+      </div>
+
+      <p class="year-marker">2024</p>
+
+      <div class="entry">
+        <div class="year">2024</div>
+        <div>
+          <span class="kind">Speaking</span>
+          <h3>Feminist urban design from the periphery</h3>
+          <p>Online lecture, Videogram platform. Presented feminist spatial practice and context specific approaches, showing how perspectives from the periphery of planning can address the climate crisis. The Videogram series, active since 2009, archives over one hundred forty recorded lectures.</p>
+          <a class="link" href="https://videogram.favu.vut.cz/lydiagresakova">Watch the lecture</a>
+          <img src="images/research/videogram-lecture-2024.jpg" alt="Still from the Videogram online lecture, 2024">
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2024</div>
+        <div>
+          <span class="kind">Speaking</span>
+          <h3>Interpreters of the more than human world? Spatial practice for the 99%</h3>
+          <p>Conference talk. 9th Brno Conference of Urban Studies, Masaryk University, 23 May 2024.</p>
+          <a class="link" href="https://urban.fss.muni.cz/">More about the conference</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2024</div>
+        <div>
+          <span class="kind">Speaking</span>
+          <h3>Spaces for the 99%: mapping feminist planning culture in Slovakia and the Czech Republic</h3>
+          <p>Conference talk, with Zuzana Tabačková. Women designing and planning for social equality, Zurich University of Applied Sciences, Winterthur, 28 June 2024.</p>
+          <a class="link" href="https://www.zhaw.ch/de/archbau/veranstaltungen/veranstaltungen-a-detailansicht/event-news/call-for-papers/">More about the conference</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2024</div>
+        <div>
+          <span class="kind">Speaking</span>
+          <h3>Never Never School for the Living Summer School</h3>
+          <p>Conference talk, with Viktória Mravčáková. Living Summer School conference, Kortrijk, 5 September 2024.</p>
+          <a class="link" href="https://livingsummerschool.com/living-conference">More about the conference</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2024</div>
+        <div>
+          <span class="kind">Researching</span><span class="kind">Exhibiting</span>
+          <h3>Restart: Transformations in Modern Housing Estates, Tallinn Architecture Biennale</h3>
+          <p>Participated with the Spolka collective, showing artistic research on common spaces in housing estates through interviews, ethnography, photography, and architecture. A book of the same title was launched at the Estonian Academy of Arts, where she also gave a public talk. Chapter: Laundry Room, Stroller Room, Meeting Room: Socialist Housing Through the Prism of Caring Architecture.</p>
+          <p class="credit">9. 10. 2024 to 16. 10. 2024, Estonian Academy of Arts, Tallinn</p>
+          <a class="link" href="https://fienta.com/tab-93014">More about the biennale</a>
+          <img src="images/research/tallinn-biennale-2024.png" alt="From the exhibition at the Tallinn Architecture Biennale">
+          <p class="credit">From the exhibition at the Biennale in Estonia, © Spolka 2024</p>
+        </div>
+      </div>
+
+      <p class="year-marker">2023</p>
+
+      <div class="entry">
+        <div class="year">2023</div>
+        <div>
+          <span class="kind">Exhibiting</span>
+          <h3>Liberated Space: Care, Architecture, Feminism</h3>
+          <p>The first exploration of feminist architecture within the Czechoslovak context. Spolka presented a participatory installation based on the work of the Never Never School, including a research diary, a hand sewn textile photo book of learning spaces, and a participatory tablecloth. Other exhibitors included Architektky, Woven, and Emília Rigová.</p>
+          <p class="credit">21. 9. 2023 to 28. 4. 2024, Bratislava City Gallery. Curators: Petra Hlaváčková, Nicole Sabella</p>
+          <a class="link" href="https://www.gmb.sk/en/detail/liberated-space-care-architecture-feminism">More about the exhibition</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2023</div>
+        <div>
+          <span class="kind">Coordinating</span>
+          <h3>Klíma ťa potrebuje (Climate Needs You Slovakia)</h3>
+          <p>Consulting, designing, and facilitating regional meetings for the youth NGO.</p>
+          <img src="images/research/klima-facilitation-2022.jpg" alt="From a facilitation session for Klíma ťa potrebuje">
+          <p class="credit">From facilitations, © Monika Kováčová 2022</p>
+        </div>
+      </div>
+
+      <p class="year-marker">2022</p>
+
+      <div class="entry">
+        <div class="year">2022</div>
+        <div>
+          <span class="kind">Coordinating</span>
+          <h3>Year of Climate Care: Unconference with Educators</h3>
+          <p>Co-designed and co-facilitated. Spolka (2022), We the Educators. Tools for learners and teachers with climate care, in <em>Year of Climate Care</em>.</p>
+          <a class="link" href="https://yearofclimate.care/en/articles/unconference-with-educators">Read more</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2022</div>
+        <div>
+          <span class="kind">Coordinating</span>
+          <h3>Climate Care Academy</h3>
+          <p>Designed and facilitated. City, Climate Refugees and Architecture: Acknowledging New Roles, New Professions and Old Professions That Matter, in <em>Year of Climate Care</em>.</p>
+          <a class="link" href="https://yearofclimate.care/en/articles/city-climate-refugees-and-architecture">Read more</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2022</div>
+        <div>
+          <span class="kind">Researching</span>
+          <h3>Places in Slovakia and the Czech Republic: the reality of new, feminist forms of their creation</h3>
+          <p>Research supported by public funding from the Slovak Arts Council. Research supervisors: Mária Beňačková Rišková, Adriana Jesenková, Zuzana Tabačková, Angela Million.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2022</div>
+        <div>
+          <span class="kind">Coordinating</span><span class="kind">Researching</span>
+          <h3>Project management and participatory process in MÚSES+</h3>
+          <p>The city of Veľký Šariš initiated a project on the Local Territorial System of Ecological Stability with added social value. Led an interdisciplinary expert team, co-designed workshops, and facilitated public engagement. The resulting strategic document, the first of its kind in Slovakia, links ecology with urban planning and tourism, with direct participation from over three hundred locals.</p>
+          <a class="link" href="https://www.velkysaris.sk/index.php?id_menu=174527">More about the project</a>
+          <img src="images/research/mestometer-2021.png" alt="Still from the Mestometer project video">
+          <p class="credit">From Mestometer video, © Samuel Velebný 2021</p>
+        </div>
+      </div>
+
+      <p class="year-marker">2021</p>
+
+      <div class="entry">
+        <div class="year">2021</div>
+        <div>
+          <span class="kind">Researching</span><span class="kind">Writing</span><span class="kind">Exhibiting</span>
+          <h3>Mestometer (City Meter)</h3>
+          <p>An interdisciplinary project combining urbanism, art, game design, and sociology in a playful exhibition on land use planning from the local perspective in Košice. Co-edited a bilingual publication: <em>Playing Mestometer: Why Do Cities Need a Zoning Plan?</em> Košice: CIKE, Spolka.</p>
+          <a class="link" href="https://www.youtube.com/watch?v=Tm8AX6BJm_o">Watch the video</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2021</div>
+        <div>
+          <span class="kind">Researching</span>
+          <h3>Envisioning possible futures through sound mapping: House of Culture Družba</h3>
+          <p>Part of sound artist Ján Solčáni's project. Led the ethnographic team and designed a mapping exercise for sound and photography artists exploring the abandoned Družba cultural house in Levice. Wrote speculative texts on the site's futures in 2030 and 2050, drawing on feminist, political, and ecological theory.</p>
+          <a class="link" href="https://cense.earth/beyond-listening/abstract/jan-solcani-envisioning-possible-futures-through-sound-mapping-house-of">Lecture by Ján Solčáni</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2021</div>
+        <div>
+          <span class="kind">Researching</span><span class="kind">Speaking</span>
+          <h3>Spatial practices from the margins</h3>
+          <p>Conference talk preceded by collaborative independent qualitative research, with Zuzana Tabačková. Urban Movements and Local Politics in CEE Countries: Recent Developments and Conceptual Ambivalences, CEFRES, Prague and online, 5 November 2021.</p>
+          <a class="link" href="https://cefres.cz/en/events/urban-movements-and-local-politics">More about the conference</a>
+          <img src="images/research/kosice-40c-2020.jpg" alt="From the exhibition Košice plus minus forty degrees">
+          <p class="credit">Exhibition Košice ±40°C, who, what and how will be most affected by climate extremes, © Spolka 2020</p>
+        </div>
+      </div>
+
+      <p class="year-marker">2020</p>
+
+      <div class="entry">
+        <div class="year">2020</div>
+        <div>
+          <span class="kind">Researching</span><span class="kind">Exhibiting</span>
+          <h3>Košice ±40°C: who, what, and how will be most affected by climate extremes</h3>
+          <p>Part of a participatory project for the city's Adaptation Strategy, involving experts, companies, institutions, and locals. Contributed sociological research and, as one of the curators, co-developed playful elements, wrote accessible texts, and moderated events. Set in a greenhouse inspired space with drought resistant plants and video projections.</p>
+          <p class="credit">17. 9. 2020 to 2. 10. 2020, Východoslovenská galéria Košice. Curatorial team Spolka+: Lýdia Grešáková, Katarína Onderková, Zuzana Tabačková</p>
+          <a class="link" href="https://vsg.sk/vystava-kosice-%c2%b140c-koho-co-a-ako-najviac-zasiahnu-extremy-klimy/">More about the exhibition</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2020</div>
+        <div>
+          <span class="kind">Writing</span>
+          <h3>Mapping with Care as an Outline for Post-neoliberal Architecture Methodologies: Tools of the Never Never School</h3>
+          <p>Article, with Zuzana Tabačková and Zuzana Révészová. <em>Architektúra &amp; Urbanizmus</em> 54 (1 to 2): 6 to 19.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2020</div>
+        <div>
+          <span class="kind">Writing</span>
+          <h3>Mapping the In-Between. Interdisciplinary Methods for Envisioning Other Futures</h3>
+          <p>Edited volume, with Zuzana Tabačková and Spolka (eds.). Košice: Spolka.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2020</div>
+        <div>
+          <span class="kind">Researching</span>
+          <h3>Institute of Urban and Regional Planning, TU Berlin</h3>
+          <p>Research posting: Mapping for Change? Critical cartography approaches to drive socio-environmental urban transformations; Critical Mapping in Municipalist Movements; The Spatial Knowledge of Children and Young Adults and its Application in Planning Contexts. Research supervisors: Angela Million, Andreas Brück, Katleen De Flander, Natasha Aruri, Anna Juliane Heinrich.</p>
+          <img src="images/research/never-never-school-2023.jpg" alt="From a Never Never School session">
+          <p class="credit">Never Never School, © Laura Véberová 2023</p>
+        </div>
+      </div>
+
+      <p class="year-marker">Since 2018</p>
+
+      <div class="entry">
+        <div class="year">2018 →</div>
+        <div>
+          <span class="kind">Coordinating</span><span class="kind">Researching</span>
+          <h3>Never Never School</h3>
+          <p>A space for dialogical learning, utopian speculation, and research about cities. Since 2018, Spolka has been building an international platform for people and teams working across artistic, design, and social disciplines, using design as a tool for investigation, imagination, and dialogue about possible futures. It also serves as an incubator, with participants developing projects embedded in the Košice context. Role includes project management, consulting, teaching, exhibiting, publishing, and fundraising.</p>
+          <p>2023, Housing in Times of Crisis: strategies and changing stereotypes of how housing is perceived.<br>
+          2021, Caring Cities: interdisciplinary symposium around care in the Czechoslovak context.<br>
+          2019, Mapping the In-between: critical mapping of the river Hornád area.<br>
+          2018, Urban dialogue with the post-socialist city: utopian scenarios for the Ťahanovce housing estate.</p>
+          <a class="link" href="https://www.youtube.com/watch?v=Y7WqKp6-WZw">Watch the short film</a>
+          &nbsp;·&nbsp;
+          <a class="link" href="https://nevernever.spolka.cc/en/never-never-school-en/">More about the school</a>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="photography">
+      <h2 class="section-title">Photography</h2>
+
+      <div class="series">
+        <div class="series-head">
+          <h3>Sisters, Daughters, Mothers</h3>
+          <span class="meta">Silver Winner, Human / Generations, Analog Sparks Awards</span>
+          <p>Four generations of women from one family, together and slowly coming apart. An autobiographical series shot as the grandmother in the frame drifted further away, made of the fleeting moments the family still had together: a wounded soul, an embrace still full of love, the plain strength of it.</p>
+        </div>
+        <div class="contact-strip">
+          <a class="frame" href="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/0ceaad2e7430c626bf178e1c7f7b23e6.jpg" target="_blank" rel="noopener">
+            <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/0ceaad2e7430c626bf178e1c7f7b23e6.jpg" alt="Sisters, Daughters, Mothers, frame 1" loading="lazy">
+            <span class="fnum">01/06</span>
+          </a>
+          <a class="frame" href="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/fed5d940b9da15c1a49214ba1fc27561.jpg" target="_blank" rel="noopener">
+            <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/fed5d940b9da15c1a49214ba1fc27561.jpg" alt="Sisters, Daughters, Mothers, frame 2" loading="lazy">
+            <span class="fnum">02/06</span>
+          </a>
+          <a class="frame" href="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/ceb8ff2f8f925a3d36cca5cd11818181.jpg" target="_blank" rel="noopener">
+            <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/ceb8ff2f8f925a3d36cca5cd11818181.jpg" alt="Sisters, Daughters, Mothers, frame 3" loading="lazy">
+            <span class="fnum">03/06</span>
+          </a>
+          <a class="frame" href="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/346c585e5bc9367c84ff9337726d7595.jpg" target="_blank" rel="noopener">
+            <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/346c585e5bc9367c84ff9337726d7595.jpg" alt="Sisters, Daughters, Mothers, frame 4" loading="lazy">
+            <span class="fnum">04/06</span>
+          </a>
+          <a class="frame" href="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/9d464dcec8cfbb6fa7c3eefc90f32c2c.jpg" target="_blank" rel="noopener">
+            <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/9d464dcec8cfbb6fa7c3eefc90f32c2c.jpg" alt="Sisters, Daughters, Mothers, frame 5" loading="lazy">
+            <span class="fnum">05/06</span>
+          </a>
+          <a class="frame" href="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/5c7648eacf148cd8fb7b9beadb3e2d25.jpg" target="_blank" rel="noopener">
+            <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/5c7648eacf148cd8fb7b9beadb3e2d25.jpg" alt="Sisters, Daughters, Mothers, frame 6" loading="lazy">
+            <span class="fnum">06/06</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="series">
+        <div class="series-head">
+          <h3>Planet Panelak</h3>
+          <span class="meta">Nikon FM, Kodak T-Max 400, 35mm black and white</span>
+          <p>The newer streets of a Slovak housing estate were named after the Soviet space programme, Sputnik Street, Rocket Street, Gagarin Square, Galactic Street. The series reads those names against the specifics of the local architecture and the life it has shaped, part of a wider question of how to plan with care with, for, and in post socialist cities losing the population they were built for.</p>
+        </div>
+        <div class="contact-strip">
+          <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000022.jpg" target="_blank" rel="noopener"><img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000022.jpg" alt="Planet Panelak, frame 1" loading="lazy"><span class="fnum">01/13</span></a>
+          <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000015.jpg" target="_blank" rel="noopener"><img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000015.jpg" alt="Planet Panelak, frame 2" loading="lazy"><span class="fnum">02/13</span></a>
+          <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000014.jpg" target="_blank" rel="noopener"><img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000014.jpg" alt="Planet Panelak, frame 3" loading="lazy"><span class="fnum">03/13</span></a>
+          <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2020_000007.jpg" target="_blank" rel="noopener"><img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2020_000007.jpg" alt="Planet Panelak, frame 4" loading="lazy"><span class="fnum">04/13</span></a>
+          <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2020_000002.jpg" target="_blank" rel="noopener"><img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2020_000002.jpg" alt="Planet Panelak, frame 5" loading="lazy"><span class="fnum">05/13</span></a>
+          <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-37.jpg" target="_blank" rel="noopener"><img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-37.jpg" alt="Planet Panelak, frame 6" loading="lazy"><span class="fnum">06/13</span></a>
+          <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-34-1.jpg" target="_blank" rel="noopener"><img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-34-1.jpg" alt="Planet Panelak, frame 7" loading="lazy"><span class="fnum">07/13</span></a>
+          <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-33-7.jpg" target="_blank" rel="noopener"><img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-33-7.jpg" alt="Planet Panelak, frame 8" loading="lazy"><span class="fnum">08/13</span></a>
+          <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-32.jpg" target="_blank" rel="noopener"><img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-32.jpg" alt="Planet Panelak, frame 9" loading="lazy"><span class="fnum">09/13</span></a>
+          <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-30.jpg" target="_blank" rel="noopener"><img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-30.jpg" alt="Planet Panelak, frame 10" loading="lazy"><span class="fnum">10/13</span></a>
+          <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-28.jpg" target="_blank" rel="noopener"><img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-28.jpg" alt="Planet Panelak, frame 11" loading="lazy"><span class="fnum">11/13</span></a>
+          <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-27.jpg" target="_blank" rel="noopener"><img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-27.jpg" alt="Planet Panelak, frame 12" loading="lazy"><span class="fnum">12/13</span></a>
+          <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-25.jpg" target="_blank" rel="noopener"><img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-25.jpg" alt="Planet Panelak, frame 13" loading="lazy"><span class="fnum">13/13</span></a>
+        </div>
+      </div>
+
+      <div class="series">
+        <div class="series-head">
+          <h3>Včelí kRaj</h3>
+          <span class="meta">Work in progress, Gemer region, Slovakia</span>
+          <p>In Gemer, southern Slovakia, long known as the hungry valley for its social and economic marginalisation, the civic association kRaj runs Včelí kRaj, linking pollinator ecology with the needs of long term unemployed people through experiential education. The series follows the sociological research behind more than human feminist spatial practice, using the camera to hold what interviews and observation cannot put into words.</p>
+        </div>
+        <div class="contact-strip">
+          <a class="frame" href="images/series-03/01.jpg" target="_blank" rel="noopener"><img src="images/series-03/01.jpg" alt="Včelí kRaj, frame 1" loading="lazy"><span class="fnum">01/11</span></a>
+          <a class="frame" href="images/series-03/02.jpg" target="_blank" rel="noopener"><img src="images/series-03/02.jpg" alt="Včelí kRaj, frame 2" loading="lazy"><span class="fnum">02/11</span></a>
+          <a class="frame" href="images/series-03/03.jpg" target="_blank" rel="noopener"><img src="images/series-03/03.jpg" alt="Včelí kRaj, frame 3" loading="lazy"><span class="fnum">03/11</span></a>
+          <a class="frame" href="images/series-03/04.jpg" target="_blank" rel="noopener"><img src="images/series-03/04.jpg" alt="Včelí kRaj, frame 4" loading="lazy"><span class="fnum">04/11</span></a>
+          <a class="frame" href="images/series-03/05.jpg" target="_blank" rel="noopener"><img src="images/series-03/05.jpg" alt="Včelí kRaj, frame 5" loading="lazy"><span class="fnum">05/11</span></a>
+          <a class="frame" href="images/series-03/06.jpg" target="_blank" rel="noopener"><img src="images/series-03/06.jpg" alt="Včelí kRaj, frame 6" loading="lazy"><span class="fnum">06/11</span></a>
+          <a class="frame" href="images/series-03/07.jpg" target="_blank" rel="noopener"><img src="images/series-03/07.jpg" alt="Včelí kRaj, frame 7" loading="lazy"><span class="fnum">07/11</span></a>
+          <a class="frame" href="images/series-03/08.jpg" target="_blank" rel="noopener"><img src="images/series-03/08.jpg" alt="Včelí kRaj, frame 8" loading="lazy"><span class="fnum">08/11</span></a>
+          <a class="frame" href="images/series-03/09.jpg" target="_blank" rel="noopener"><img src="images/series-03/09.jpg" alt="Včelí kRaj, frame 9" loading="lazy"><span class="fnum">09/11</span></a>
+          <a class="frame" href="images/series-03/10.jpg" target="_blank" rel="noopener"><img src="images/series-03/10.jpg" alt="Včelí kRaj, frame 10" loading="lazy"><span class="fnum">10/11</span></a>
+          <a class="frame" href="images/series-03/11.jpg" target="_blank" rel="noopener"><img src="images/series-03/11.jpg" alt="Včelí kRaj, frame 11" loading="lazy"><span class="fnum">11/11</span></a>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="about">
+        <p>Lýdia Grešáková works at the meeting point of sociology and spatial practice, based in Slovakia and active across the Czech and Slovak field of feminist, climate caring urbanism. She is currently a PhD researcher at the Institute for Sociology of the Slovak Academy of Sciences, and a statutory representative of Spolka.</p>
+        <p>For research collaboration, exhibition, or publication enquiries: <a href="mailto:lydia@spolka.cc">lydia@spolka.cc</a></p>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<footer>
+  Lýdia Grešáková, built as a hand edited static page, no template lock in.
+</footer>
+
+</body>
+</html>

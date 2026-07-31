@@ -1,0 +1,424 @@
+/* ============================================================
+   Lýdia Grešáková — portfolio
+   Two practices, one register: research on the left column logic,
+   analog photography styled as a contact sheet.
+   ============================================================ */
+
+:root {
+  --paper: #EDEAE1;
+  --paper-alt: #E2DECF;
+  --ink: #17181A;
+  --ink-soft: #55564F;
+  --ink-faint: #8B8B80;
+  --accent: #9E1B1B;
+  --rule: #C9C2AF;
+  --display: 'Space Grotesk', sans-serif;
+  --serif: 'Newsreader', serif;
+  --mono: 'IBM Plex Mono', monospace;
+  --max: 780px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+a:not(.nav-link):not(.frame) { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+a:not(.nav-link):not(.frame):hover { color: var(--accent); }
+
+img { max-width: 100%; display: block; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+/* ---------- Sidebar ---------- */
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  padding: 48px 32px;
+  border-right: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-top .name {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  margin: 0 0 6px;
+}
+
+.sidebar-top .role {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin: 0 0 36px;
+  letter-spacing: 0.02em;
+}
+
+.nav-link {
+  display: block;
+  font-family: var(--mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  color: var(--ink-soft);
+  padding: 7px 0;
+  border-left: 2px solid transparent;
+  padding-left: 12px;
+  margin-left: -13px;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.nav-link:hover, .nav-link:focus-visible {
+  color: var(--ink);
+  border-left-color: var(--accent);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 32px;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+  padding: 3px 7px;
+  border-radius: 2px;
+}
+
+.sidebar-bottom {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+.sidebar-bottom a { text-decoration: underline; text-decoration-color: var(--rule); }
+.sidebar-bottom a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+
+/* ---------- Main ---------- */
+
+main { padding: 64px 48px 120px; }
+
+.intro {
+  max-width: var(--max);
+  margin: 0 0 96px;
+}
+
+.intro p {
+  font-size: 20px;
+  margin: 0 0 18px;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin: 0 0 10px;
+  display: block;
+}
+
+section { scroll-margin-top: 24px; }
+
+h2.section-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 34px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 0 0 40px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ---------- Research (register / index card list) ---------- */
+
+.entry {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 28px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  max-width: var(--max);
+}
+
+.entry:first-child { padding-top: 0; }
+
+.entry .year {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  padding-top: 3px;
+}
+
+.entry h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+
+.entry .kind {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-right: 8px;
+}
+
+.entry p { margin: 0 0 12px; font-size: 16.5px; color: var(--ink); }
+
+.entry .credit {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-top: 8px;
+}
+
+.entry .link {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+}
+
+.entry img { margin: 14px 0 4px; border: 1px solid var(--rule); }
+
+/* year group header inside the list */
+.year-marker {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-faint);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 44px 0 4px;
+  max-width: var(--max);
+}
+.year-marker:first-of-type { margin-top: 0; }
+
+/* ---------- Photography (contact sheet motif) ---------- */
+
+.series {
+  margin: 0 0 88px;
+  max-width: 1040px;
+}
+
+.series-head {
+  margin-bottom: 20px;
+}
+
+.series-head h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 0 0 6px;
+}
+
+.series-head .meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.series-head p {
+  max-width: 640px;
+  font-size: 16.5px;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.contact-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--ink);
+  padding: 2px;
+  margin-top: 22px;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--paper-alt);
+  display: block;
+}
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(6%);
+}
+
+.frame::before, .frame::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 8px;
+  background-image: repeating-linear-gradient(90deg, var(--paper) 0 6px, transparent 6px 14px);
+  background-color: var(--ink);
+  z-index: 2;
+}
+.frame::before { top: 0; }
+.frame::after { bottom: 0; }
+
+.frame .fnum {
+  position: absolute;
+  bottom: 12px;
+  left: 6px;
+  z-index: 3;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: #fff;
+  background: rgba(0,0,0,0.55);
+  padding: 1px 5px;
+}
+
+.frame.empty {
+  border: 1px dashed var(--ink-faint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+}
+
+.frame.empty span {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  line-height: 1.5;
+}
+
+/* ---------- Hero plate ---------- */
+
+.hero-plate {
+  max-width: 980px;
+  margin: 0 0 56px;
+}
+
+.hero-plate img {
+  width: 100%;
+  border: 1px solid var(--rule);
+}
+
+.hero-plate figcaption {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.hero-plate .cap-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  max-width: 560px;
+}
+
+.hero-plate .cap-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  white-space: nowrap;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .hero-plate figcaption { grid-template-columns: 1fr; }
+  .hero-plate .cap-meta { text-align: left; }
+}
+
+/* ---------- About ---------- */
+
+.about { max-width: var(--max); }
+.about p { font-size: 18px; }
+
+/* ---------- Footer ---------- */
+
+footer {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  padding: 40px 48px 64px;
+  border-top: 1px solid var(--rule);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar {
+    position: relative;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 24px;
+  }
+  .sidebar-top { display: flex; align-items: baseline; gap: 16px; }
+  .sidebar-top .name { font-size: 18px; margin: 0; }
+  .sidebar-top .role { display: none; }
+  .tags, .sidebar-bottom { display: none; }
+  nav { display: flex; gap: 18px; }
+  .nav-link { padding: 0; margin: 0; border-left: none; }
+  main { padding: 40px 24px 80px; }
+  .entry { grid-template-columns: 1fr; gap: 8px; }
+  .contact-strip { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .contact-strip { grid-template-columns: 1fr; }
+}
+
+/* keyboard focus visibility */
+a:focus-visible, .frame:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
