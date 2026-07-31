@@ -22,12 +22,16 @@ Ak máš v repozitári už staršiu verziu index.html, nový jednoducho prepíš
 
 ## Čo sa zmenilo v tomto kole
 
-Fotografie už nemajú filmový rámček ani číslo políčka, len jemnú medzeru medzi nimi. Kliknutím na fotku sa teraz otvorí zväčšený náhľad priamo na stránke, žiadne nové okno, žiadne sťahovanie. Zatvára sa krížikom vpravo hore, kliknutím mimo fotky, alebo klávesom Escape.
+Fotografie nemajú filmový rámček ani číslo políčka, len jemnú medzeru medzi nimi. Kliknutím na fotku sa otvorí zväčšený náhľad priamo na stránke, žiadne nové okno, žiadne sťahovanie.
+
+Séria Sisters, Daughters, Mothers už nezávisí od Analog Sparks Awards, všetkých šesť fotiek je teraz uložených priamo v priečinku images/series-01. Hlavná, výherná fotka so všetkými štyrmi generáciami je teraz prvá.
+
+Použila som všetkých šesť fotiek, ktoré si poslala, žiadnu som nevynechala, keďže som si nebola istá, ktorú presne myslíš pod fotkou s rukami, na starej stránke som ich totiž nevidela, len odkazy na ne. Ak chceš niektorú z nich vynechať, napríklad tú s rukou a cigaretou, stačí mi povedať ktorú, alebo priamo v index.html vymazať príslušný blok s tagom button v sekcii Sisters, Daughters, Mothers a upraviť poradie zvyšných.
 
 ## Chýbajúci súbor
 
-V sekcii Research, pri položke Czech and Slovak Spatial Practice for 99% z roku 2026, stránka odkazuje na images/research/beyond_architecture.jpg. Tento súbor nemám, takže na mieste obrázka bude prázdno alebo rozbitá ikona, kým ho nenahráš do priečinka images/research. Ak mi ho pošleš, doplním ho aj ja.
+V sekcii Research, pri položke Czech and Slovak Spatial Practice for 99% z roku 2026, stránka odkazuje na images/research/beyond_architecture.jpg. Tento súbor nemám, na mieste obrázka bude prázdno, kým ho nenahráš do priečinka images/research.
 
 ## Ak niečo iné nesedí
 
-Text v research sekcii je presne taký, aký si mi ho naposledy poslala, vrátane doplnených odkazov a označení Spolka. Ak nájdeš ešte niečo neaktuálne, napíš mi presne ktorá položka, poviem ti presne kde to v súbore zmeniť, alebo to rovno upravím ja.
+Napíš mi presne ktorá položka, poviem ti presne kde to v súbore zmeniť, alebo to rovno upravím ja.
