@@ -12,7 +12,7 @@
 /* ============================================================
    Lýdia Grešáková — portfolio
    Two practices, one register: research on the left column logic,
-   analog photography styled as a contact sheet.
+   analog photography as a clean editorial grid with a lightbox.
    ============================================================ */
 
 :root {
@@ -48,8 +48,8 @@ body {
 }
 
 a { color: inherit; }
-a:not(.nav-link):not(.frame) { text-decoration-color: var(--accent); text-underline-offset: 3px; }
-a:not(.nav-link):not(.frame):hover { color: var(--accent); }
+a:not(.nav-link) { text-decoration-color: var(--accent); text-underline-offset: 3px; }
+a:not(.nav-link):hover { color: var(--accent); }
 
 img { max-width: 100%; display: block; }
 
@@ -242,7 +242,7 @@ h2.section-title {
 }
 .year-marker:first-of-type { margin-top: 0; }
 
-/* ---------- Photography (contact sheet motif) ---------- */
+/* ---------- Photography (clean grid, soft gap, no film chrome) ---------- */
 
 .series {
   margin: 0 0 88px;
@@ -282,9 +282,7 @@ h2.section-title {
 .contact-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  background: var(--ink);
-  padding: 2px;
+  gap: 20px;
   margin-top: 22px;
 }
 
@@ -292,39 +290,26 @@ h2.section-title {
   position: relative;
   aspect-ratio: 3 / 2;
   overflow: hidden;
-  background: var(--paper-alt);
   display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: var(--paper-alt);
+  cursor: zoom-in;
 }
 
 .frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(6%);
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-.frame::before, .frame::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0;
-  height: 8px;
-  background-image: repeating-linear-gradient(90deg, var(--paper) 0 6px, transparent 6px 14px);
-  background-color: var(--ink);
-  z-index: 2;
-}
-.frame::before { top: 0; }
-.frame::after { bottom: 0; }
-
-.frame .fnum {
-  position: absolute;
-  bottom: 12px;
-  left: 6px;
-  z-index: 3;
-  font-family: var(--mono);
-  font-size: 10px;
-  color: #fff;
-  background: rgba(0,0,0,0.55);
-  padding: 1px 5px;
+.frame:hover img,
+.frame:focus-visible img {
+  transform: scale(1.03);
 }
 
 .frame.empty {
@@ -334,6 +319,7 @@ h2.section-title {
   justify-content: center;
   text-align: center;
   padding: 12px;
+  cursor: default;
 }
 
 .frame.empty span {
@@ -341,6 +327,64 @@ h2.section-title {
   font-size: 11px;
   color: var(--ink-faint);
   line-height: 1.5;
+}
+
+/* ---------- Lightbox ---------- */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 15, 13, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(237, 234, 225, 0.4);
+  background: transparent;
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s;
+}
+
+.lightbox-close:hover, .lightbox-close:focus-visible {
+  border-color: var(--paper);
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  .lightbox { padding: 20px; }
+  .lightbox-close { top: 14px; right: 14px; }
 }
 
 /* ---------- Hero plate ---------- */
@@ -421,7 +465,7 @@ footer {
   .nav-link { padding: 0; margin: 0; border-left: none; }
   main { padding: 40px 24px 80px; }
   .entry { grid-template-columns: 1fr; gap: 8px; }
-  .contact-strip { grid-template-columns: repeat(2, 1fr); }
+  .contact-strip { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 }
 
 @media (max-width: 480px) {
@@ -754,42 +798,27 @@ a:focus-visible, .frame:focus-visible {
       <span class="meta">Silver Winner, Human / Generations, Analog Sparks Awards</span>
       <p>Four generations of women from one family, together and slowly coming apart. An autobiographical series shot as the grandmother in the frame drifted further away, made of the fleeting moments the family still had together: a wounded soul, an embrace still full of love, the plain strength of it.</p>
     </div>
-
-    <div class="contact-strip gallery">
-
-      <a class="frame" href="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/0ceaad2e7430c626bf178e1c7f7b23e6.jpg">
-        <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/0ceaad2e7430c626bf178e1c7f7b23e6.jpg" alt="Sisters, Daughters, Mothers, frame 1">
-        <span class="fnum">01/06</span>
-      </a>
-
-      <a class="frame" href="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/fed5d940b9da15c1a49214ba1fc27561.jpg">
-        <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/fed5d940b9da15c1a49214ba1fc27561.jpg" alt="Sisters, Daughters, Mothers, frame 2">
-        <span class="fnum">02/06</span>
-      </a>
-
-      <a class="frame" href="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/ceb8ff2f8f925a3d36cca5cd11818181.jpg">
-        <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/ceb8ff2f8f925a3d36cca5cd11818181.jpg" alt="Sisters, Daughters, Mothers, frame 3">
-        <span class="fnum">03/06</span>
-      </a>
-
-      <a class="frame" href="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/346c585e5bc9367c84ff9337726d7595.jpg">
-        <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/346c585e5bc9367c84ff9337726d7595.jpg" alt="Sisters, Daughters, Mothers, frame 4">
-        <span class="fnum">04/06</span>
-      </a>
-
-      <a class="frame" href="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/9d464dcec8cfbb6fa7c3eefc90f32c2c.jpg">
-        <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/9d464dcec8cfbb6fa7c3eefc90f32c2c.jpg" alt="Sisters, Daughters, Mothers, frame 5">
-        <span class="fnum">05/06</span>
-      </a>
-
-      <a class="frame" href="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/5c7648eacf148cd8fb7b9beadb3e2d25.jpg">
-        <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/5c7648eacf148cd8fb7b9beadb3e2d25.jpg" alt="Sisters, Daughters, Mothers, frame 6">
-        <span class="fnum">06/06</span>
-      </a>
-
+    <div class="contact-strip">
+      <button type="button" class="frame" data-full="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/0ceaad2e7430c626bf178e1c7f7b23e6.jpg">
+        <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/0ceaad2e7430c626bf178e1c7f7b23e6.jpg" alt="Sisters, Daughters, Mothers, frame 1" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/fed5d940b9da15c1a49214ba1fc27561.jpg">
+        <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/fed5d940b9da15c1a49214ba1fc27561.jpg" alt="Sisters, Daughters, Mothers, frame 2" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/ceb8ff2f8f925a3d36cca5cd11818181.jpg">
+        <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/ceb8ff2f8f925a3d36cca5cd11818181.jpg" alt="Sisters, Daughters, Mothers, frame 3" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/346c585e5bc9367c84ff9337726d7595.jpg">
+        <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/346c585e5bc9367c84ff9337726d7595.jpg" alt="Sisters, Daughters, Mothers, frame 4" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/9d464dcec8cfbb6fa7c3eefc90f32c2c.jpg">
+        <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/9d464dcec8cfbb6fa7c3eefc90f32c2c.jpg" alt="Sisters, Daughters, Mothers, frame 5" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/5c7648eacf148cd8fb7b9beadb3e2d25.jpg">
+        <img src="https://analogsparksawards.s3.us-west-2.amazonaws.com/uploads/15509/3-3725-24/full/5c7648eacf148cd8fb7b9beadb3e2d25.jpg" alt="Sisters, Daughters, Mothers, frame 6" loading="lazy">
+      </button>
     </div>
   </div>
-
 
   <div class="series">
     <div class="series-head">
@@ -797,29 +826,48 @@ a:focus-visible, .frame:focus-visible {
       <span class="meta">Nikon FM, Kodak T-Max 400, 35mm black and white</span>
       <p>The newer streets of a Slovak housing estate were named after the Soviet space programme. The series reads those names against the architecture and everyday life they shaped.</p>
     </div>
-
-    <div class="contact-strip gallery">
-
-      <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000022.jpg">
-        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000022.jpg">
-        <span class="fnum">01/13</span>
-      </a>
-
-      <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000015.jpg">
-        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000015.jpg">
-        <span class="fnum">02/13</span>
-      </a>
-
-      <a class="frame" href="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000014.jpg">
-        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000014.jpg">
-        <span class="fnum">03/13</span>
-      </a>
-
-      <!-- ďalšie fotografie ostávajú rovnakým spôsobom -->
-
+    <div class="contact-strip">
+      <button type="button" class="frame" data-full="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000022.jpg">
+        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000022.jpg" alt="Planet Panelak, frame 1" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000015.jpg">
+        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000015.jpg" alt="Planet Panelak, frame 2" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000014.jpg">
+        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2021_jar_000014.jpg" alt="Planet Panelak, frame 3" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2020_000007.jpg">
+        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2020_000007.jpg" alt="Planet Panelak, frame 4" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2020_000002.jpg">
+        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/2020_000002.jpg" alt="Planet Panelak, frame 5" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-37.jpg">
+        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-37.jpg" alt="Planet Panelak, frame 6" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-34-1.jpg">
+        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-34-1.jpg" alt="Planet Panelak, frame 7" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-33-7.jpg">
+        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-33-7.jpg" alt="Planet Panelak, frame 8" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-32.jpg">
+        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-32.jpg" alt="Planet Panelak, frame 9" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-30.jpg">
+        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-30.jpg" alt="Planet Panelak, frame 10" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-28.jpg">
+        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-28.jpg" alt="Planet Panelak, frame 11" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-27.jpg">
+        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-27.jpg" alt="Planet Panelak, frame 12" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-25.jpg">
+        <img src="https://www.life-framer.com/wp-content/uploads/um-gallery/25004/R1-25.jpg" alt="Planet Panelak, frame 13" loading="lazy">
+      </button>
     </div>
   </div>
-
 
   <div class="series">
     <div class="series-head">
@@ -827,27 +875,42 @@ a:focus-visible, .frame:focus-visible {
       <span class="meta">Work in progress, Gemer region, Slovakia</span>
       <p>The series follows sociological research behind more than human feminist spatial practice, using the camera as another field notebook.</p>
     </div>
-
-    <div class="contact-strip gallery">
-
-      <a class="frame" href="images/series-03/01.jpg">
-        <img src="images/series-03/01.jpg">
-        <span class="fnum">01/11</span>
-      </a>
-
-      <a class="frame" href="images/series-03/02.jpg">
-        <img src="images/series-03/02.jpg">
-        <span class="fnum">02/11</span>
-      </a>
-
-      <a class="frame" href="images/series-03/03.jpg">
-        <img src="images/series-03/03.jpg">
-        <span class="fnum">03/11</span>
-      </a>
-
+    <div class="contact-strip">
+      <button type="button" class="frame" data-full="images/series-03/01.jpg">
+        <img src="images/series-03/01.jpg" alt="Včelí kRaj, frame 1" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="images/series-03/02.jpg">
+        <img src="images/series-03/02.jpg" alt="Včelí kRaj, frame 2" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="images/series-03/03.jpg">
+        <img src="images/series-03/03.jpg" alt="Včelí kRaj, frame 3" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="images/series-03/04.jpg">
+        <img src="images/series-03/04.jpg" alt="Včelí kRaj, frame 4" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="images/series-03/05.jpg">
+        <img src="images/series-03/05.jpg" alt="Včelí kRaj, frame 5" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="images/series-03/06.jpg">
+        <img src="images/series-03/06.jpg" alt="Včelí kRaj, frame 6" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="images/series-03/07.jpg">
+        <img src="images/series-03/07.jpg" alt="Včelí kRaj, frame 7" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="images/series-03/08.jpg">
+        <img src="images/series-03/08.jpg" alt="Včelí kRaj, frame 8" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="images/series-03/09.jpg">
+        <img src="images/series-03/09.jpg" alt="Včelí kRaj, frame 9" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="images/series-03/10.jpg">
+        <img src="images/series-03/10.jpg" alt="Včelí kRaj, frame 10" loading="lazy">
+      </button>
+      <button type="button" class="frame" data-full="images/series-03/11.jpg">
+        <img src="images/series-03/11.jpg" alt="Včelí kRaj, frame 11" loading="lazy">
+      </button>
     </div>
   </div>
-
 
 </section>
 
@@ -858,6 +921,57 @@ a:focus-visible, .frame:focus-visible {
 <footer>
   Lýdia Grešáková, built as a hand edited static page, no template lock in.
 </footer>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close image">&#10005;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+(function () {
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var closeBtn = document.getElementById('lightboxClose');
+  var lastFocused = null;
+
+  function openLightbox(src, alt) {
+    lastFocused = document.activeElement;
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    lightboxImg.src = '';
+    if (lastFocused) { lastFocused.focus(); }
+  }
+
+  document.querySelectorAll('.frame[data-full]').forEach(function (frame) {
+    frame.addEventListener('click', function () {
+      var img = frame.querySelector('img');
+      openLightbox(frame.getAttribute('data-full'), img ? img.alt : '');
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) { closeLightbox(); }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+      closeLightbox();
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
