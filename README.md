@@ -6,10 +6,8 @@ Toto je hotová statická stránka, jeden súbor index.html so všetkým vnútri
 
 1. Otvor svoj repozitár na GitHube.
 2. Klikni Add file, potom Upload files.
-3. Pretiahni tam index.html, README.md a celý priečinok images.
+3. Pretiahni tam index.html, README.md, favicon.svg, favicon-32.png, apple-touch-icon.png a celý priečinok images.
 4. Dole klikni Commit changes.
-
-Ak máš v repozitári už staršiu verziu index.html, nový jednoducho prepíše starý pri nahraní, GitHub sa ťa spýta na potvrdenie.
 
 ## Zapnutie GitHub Pages
 
@@ -22,11 +20,15 @@ Ak máš v repozitári už staršiu verziu index.html, nový jednoducho prepíš
 
 ## Čo sa zmenilo v tomto kole
 
-Fotografie nemajú filmový rámček ani číslo políčka, len jemnú medzeru medzi nimi. Kliknutím na fotku sa otvorí zväčšený náhľad priamo na stránke, žiadne nové okno, žiadne sťahovanie.
+Tagy v ľavom stĺpci, Researching, Speaking, Writing, Coordinating, Exhibiting, Photographing, sú teraz klikateľné. Kliknutím na jeden alebo viac naraz sa v sekcii Research zobrazia len položky s daným typom, aj s príslušnými rokmi, ostatné sa skryjú. Opätovným kliknutím na aktívny tag ho vypneš, keď nie je aktívny žiadny tag, vidno všetko. Aktívny tag je zvýraznený tmavočervenou farbou. Táto funkcia je zatiaľ len na počítačovom zobrazení, na mobile sa tagy v bočnom paneli momentálne nezobrazujú vôbec, rovnako ako predtým, takže tam ani filter nie je k dispozícii. Ak by si ho chcela aj na mobile, viem to doplniť.
 
-Séria Sisters, Daughters, Mothers už nezávisí od Analog Sparks Awards, všetkých šesť fotiek je teraz uložených priamo v priečinku images/series-01. Hlavná, výherná fotka so všetkými štyrmi generáciami je teraz prvá.
+Photographing sa medzi výskumnými položkami nikde nenachádza, keďže žiadna z nich nie je označená ako fotografovanie, takže po jeho zapnutí sekcia Research zostane prázdna a zostane viditeľná len fotografická sekcia nižšie. Ak by si chcela iné správanie, napríklad aby Photographing namiesto filtrovania len odskrolovalo na fotografie, daj vedieť.
 
-Použila som všetkých šesť fotiek, ktoré si poslala, žiadnu som nevynechala, keďže som si nebola istá, ktorú presne myslíš pod fotkou s rukami, na starej stránke som ich totiž nevidela, len odkazy na ne. Ak chceš niektorú z nich vynechať, napríklad tú s rukou a cigaretou, stačí mi povedať ktorú, alebo priamo v index.html vymazať príslušný blok s tagom button v sekcii Sisters, Daughters, Mothers a upraviť poradie zvyšných.
+Popisky fotiek v tretej sérii už neobsahujú Včelí kRaj, teraz odkazujú na aktuálny názov série, Soil, care and repair in spatial practice for a more than human world.
+
+Akcentová farba je teraz #3C2640, viac fialová, menej slivková. Keďže je to jedna premenná na začiatku súboru, --accent, prejaví sa všade naraz, nadpisy, aktívne tagy, odkazy aj orámovanie pri klávesovom prechádzaní.
+
+Pribudol favicon, malá ikonka v tejto fialovej s bielym G, ktorá sa zobrazuje v karte prehliadača a pri pridaní stránky na plochu telefónu. Súbory favicon.svg, favicon-32.png a apple-touch-icon.png treba nahrať do repozitára na rovnakú úroveň ako index.html, teda priamo do koreňa, nie do priečinka images.
 
 ## Chýbajúci súbor
 
