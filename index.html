@@ -7,6 +7,9 @@
 <meta name="description" content="Sociologist working on feminist spatial practice, and analog documentary photographer. Selected research, texts, talks, exhibitions, and photo series.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
@@ -21,7 +24,7 @@
   --ink: #17181A;
   --ink-soft: #55564F;
   --ink-faint: #8B8B80;
-  --accent: #9E1B1B;
+  --accent: #3C2640;
   --rule: #C9C2AF;
   --display: 'Space Grotesk', sans-serif;
   --serif: 'Newsreader', serif;
@@ -127,6 +130,26 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--rule);
   padding: 3px 7px;
   border-radius: 2px;
+  background: none;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.tag:hover {
+  border-color: var(--ink-soft);
+}
+
+.tag.tag-active {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
+}
+
+.tags-hint {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-faint);
+  margin: 8px 0 0;
 }
 
 .sidebar-bottom {
@@ -135,7 +158,7 @@ img { max-width: 100%; display: block; }
   color: var(--ink-faint);
 }
 
-.sidebar-bottom a { text-decoration: underline; text-decoration-color: var(--rule); }
+.sidebar-bottom a { text-decoration: underline; text-decoration-color: var(--rule); display: block; margin-top: 4px; }
 .sidebar-bottom a:hover { color: var(--accent); text-decoration-color: var(--accent); }
 
 /* ---------- Main ---------- */
@@ -460,7 +483,7 @@ footer {
   .sidebar-top { display: flex; align-items: baseline; gap: 16px; }
   .sidebar-top .name { font-size: 18px; margin: 0; }
   .sidebar-top .role { display: none; }
-  .tags, .sidebar-bottom { display: none; }
+  .tags, .tags-hint, .sidebar-bottom { display: none; }
   nav { display: flex; gap: 18px; }
   .nav-link { padding: 0; margin: 0; border-left: none; }
   main { padding: 40px 24px 80px; }
@@ -473,7 +496,7 @@ footer {
 }
 
 /* keyboard focus visibility */
-a:focus-visible, .frame:focus-visible {
+a:focus-visible, .frame:focus-visible, .tag:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
@@ -493,14 +516,15 @@ a:focus-visible, .frame:focus-visible {
         <a class="nav-link" href="#research">Research</a>
         <a class="nav-link" href="#photography">Photography</a>
       </nav>
-      <div class="tags">
-        <span class="tag">Researching</span>
-        <span class="tag">Speaking</span>
-        <span class="tag">Writing</span>
-        <span class="tag">Coordinating</span>
-        <span class="tag">Exhibiting</span>
-        <span class="tag">Photographing</span>
+      <div class="tags" id="tagFilters">
+        <button type="button" class="tag" data-tag="researching" aria-pressed="false">Researching</button>
+        <button type="button" class="tag" data-tag="speaking" aria-pressed="false">Speaking</button>
+        <button type="button" class="tag" data-tag="writing" aria-pressed="false">Writing</button>
+        <button type="button" class="tag" data-tag="coordinating" aria-pressed="false">Coordinating</button>
+        <button type="button" class="tag" data-tag="exhibiting" aria-pressed="false">Exhibiting</button>
+        <button type="button" class="tag" data-tag="photographing" aria-pressed="false">Photographing</button>
       </div>
+      <p class="tags-hint">Filter research by type</p>
     </div>
     <div class="sidebar-bottom">
       <a href="mailto:lydia@spolka.cc">lydia (at) spolka (dot) cc</a>
@@ -877,31 +901,31 @@ a:focus-visible, .frame:focus-visible {
     </div>
     <div class="contact-strip">
       <button type="button" class="frame" data-full="images/series-03/01.jpg">
-        <img src="images/series-03/01.jpg" alt="Včelí kRaj, frame 1" loading="lazy">
+        <img src="images/series-03/01.jpg" alt="Soil, care and repair in spatial practice for a more than human world, frame 1" loading="lazy">
       </button>
       <button type="button" class="frame" data-full="images/series-03/02.jpg">
-        <img src="images/series-03/02.jpg" alt="Včelí kRaj, frame 2" loading="lazy">
+        <img src="images/series-03/02.jpg" alt="Soil, care and repair in spatial practice for a more than human world, frame 2" loading="lazy">
       </button>
       <button type="button" class="frame" data-full="images/series-03/03.jpg">
-        <img src="images/series-03/03.jpg" alt="Včelí kRaj, frame 3" loading="lazy">
+        <img src="images/series-03/03.jpg" alt="Soil, care and repair in spatial practice for a more than human world, frame 3" loading="lazy">
       </button>
       <button type="button" class="frame" data-full="images/series-03/04.jpg">
-        <img src="images/series-03/04.jpg" alt="Včelí kRaj, frame 4" loading="lazy">
+        <img src="images/series-03/04.jpg" alt="Soil, care and repair in spatial practice for a more than human world, frame 4" loading="lazy">
       </button>
       <button type="button" class="frame" data-full="images/series-03/05.jpg">
-        <img src="images/series-03/05.jpg" alt="Včelí kRaj, frame 5" loading="lazy">
+        <img src="images/series-03/05.jpg" alt="Soil, care and repair in spatial practice for a more than human world, frame 5" loading="lazy">
       </button>
       <button type="button" class="frame" data-full="images/series-03/06.jpg">
-        <img src="images/series-03/06.jpg" alt="Včelí kRaj, frame 6" loading="lazy">
+        <img src="images/series-03/06.jpg" alt="Soil, care and repair in spatial practice for a more than human world, frame 6" loading="lazy">
       </button>
       <button type="button" class="frame" data-full="images/series-03/07.jpg">
-        <img src="images/series-03/07.jpg" alt="Včelí kRaj, frame 7" loading="lazy">
+        <img src="images/series-03/07.jpg" alt="Soil, care and repair in spatial practice for a more than human world, frame 7" loading="lazy">
       </button>
       <button type="button" class="frame" data-full="images/series-03/10.jpg">
-        <img src="images/series-03/10.jpg" alt="Včelí kRaj, frame 10" loading="lazy">
+        <img src="images/series-03/10.jpg" alt="Soil, care and repair in spatial practice for a more than human world, frame 8" loading="lazy">
       </button>
       <button type="button" class="frame" data-full="images/series-03/11.jpg">
-        <img src="images/series-03/11.jpg" alt="Včelí kRaj, frame 11" loading="lazy">
+        <img src="images/series-03/11.jpg" alt="Soil, care and repair in spatial practice for a more than human world, frame 9" loading="lazy">
       </button>
     </div>
   </div>
@@ -963,6 +987,60 @@ a:focus-visible, .frame:focus-visible {
     if (e.key === 'Escape' && lightbox.classList.contains('open')) {
       closeLightbox();
     }
+  });
+})();
+</script>
+
+<script>
+(function () {
+  var tagButtons = document.querySelectorAll('#tagFilters .tag');
+  var researchSection = document.getElementById('research');
+  if (!researchSection) return;
+  var active = new Set();
+
+  function applyFilter() {
+    var nodes = Array.prototype.slice.call(researchSection.children);
+    var markerVisibility = [];
+
+    nodes.forEach(function (node) {
+      if (node.classList && node.classList.contains('entry')) {
+        var kinds = Array.prototype.slice.call(node.querySelectorAll('.kind'))
+          .map(function (k) { return k.textContent.trim().toLowerCase(); });
+        var visible = active.size === 0 || kinds.some(function (k) { return active.has(k); });
+        node.style.display = visible ? '' : 'none';
+      }
+    });
+
+    var markers = Array.prototype.slice.call(researchSection.querySelectorAll('.year-marker'));
+    markers.forEach(function (marker, i) {
+      var start = nodes.indexOf(marker) + 1;
+      var end = (i + 1 < markers.length) ? nodes.indexOf(markers[i + 1]) : nodes.length;
+      var hasVisible = false;
+      for (var j = start; j < end; j++) {
+        var n = nodes[j];
+        if (n && n.classList && n.classList.contains('entry') && n.style.display !== 'none') {
+          hasVisible = true;
+          break;
+        }
+      }
+      marker.style.display = hasVisible ? '' : 'none';
+    });
+  }
+
+  tagButtons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var key = btn.getAttribute('data-tag');
+      if (active.has(key)) {
+        active.delete(key);
+        btn.classList.remove('tag-active');
+        btn.setAttribute('aria-pressed', 'false');
+      } else {
+        active.add(key);
+        btn.classList.add('tag-active');
+        btn.setAttribute('aria-pressed', 'true');
+      }
+      applyFilter();
+    });
   });
 })();
 </script>
