@@ -1001,9 +1001,14 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
   function applyFilter() {
     var heroPlate = document.querySelector('.hero-plate');
     var aboutSection = document.getElementById('about');
+    var photographySection = document.getElementById('photography');
     var filtering = active.size > 0;
     if (heroPlate) { heroPlate.style.display = filtering ? 'none' : ''; }
     if (aboutSection) { aboutSection.style.display = filtering ? 'none' : ''; }
+    if (photographySection) {
+      var showPhotography = active.size === 0 || active.has('photographing');
+      photographySection.style.display = showPhotography ? '' : 'none';
+    }
 
     var nodes = Array.prototype.slice.call(researchSection.children);
     var markerVisibility = [];

@@ -30,7 +30,9 @@ Akcentová farba je teraz #3C2640, viac fialová, menej slivková. Keďže je to
 
 Pribudol favicon, malá ikonka v tejto fialovej s bielym G, ktorá sa zobrazuje v karte prehliadača a pri pridaní stránky na plochu telefónu. Súbory favicon.svg, favicon-32.png a apple-touch-icon.png treba nahrať do repozitára na rovnakú úroveň ako index.html, teda priamo do koreňa, nie do priečinka images.
 
-Pri zapnutom filtri, teda keď je aktívny aspoň jeden tag, sa navyše schová aj úvodná fotka Run a sekcia About s indexovým textom, aby ostali viditeľné naozaj len filtrované položky. Keď vypneš všetky tagy, obe sa vrátia späť. Fotografická sekcia nižšie sa filtrovaním neschováva, keďže s tagmi priamo nesúvisí, ak by si chcela, aby sa schovávala tiež, daj vedieť.
+Pri zapnutom filtri, teda keď je aktívny aspoň jeden tag, sa navyše schová aj úvodná fotka Run a sekcia About s indexovým textom, aby ostali viditeľné naozaj len filtrované položky. Keď vypneš všetky tagy, obe sa vrátia späť.
+
+Fotografická sekcia sa teraz správa presne ako keby mala tag Photographing. Keď nie je aktívny žiadny tag, je viditeľná ako doteraz. Akonáhle zapneš čo i len jeden iný tag, napríklad Writing, fotografická sekcia sa schová. Zobrazí sa znova, len keď je medzi aktívnymi tagmi aj Photographing, či už samostatne, alebo spolu s inými.
 
 ## Chýbajúci súbor
 
