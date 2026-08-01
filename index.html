@@ -999,6 +999,12 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
   var active = new Set();
 
   function applyFilter() {
+    var heroPlate = document.querySelector('.hero-plate');
+    var aboutSection = document.getElementById('about');
+    var filtering = active.size > 0;
+    if (heroPlate) { heroPlate.style.display = filtering ? 'none' : ''; }
+    if (aboutSection) { aboutSection.style.display = filtering ? 'none' : ''; }
+
     var nodes = Array.prototype.slice.call(researchSection.children);
     var markerVisibility = [];
 

@@ -30,9 +30,29 @@ Akcentová farba je teraz #3C2640, viac fialová, menej slivková. Keďže je to
 
 Pribudol favicon, malá ikonka v tejto fialovej s bielym G, ktorá sa zobrazuje v karte prehliadača a pri pridaní stránky na plochu telefónu. Súbory favicon.svg, favicon-32.png a apple-touch-icon.png treba nahrať do repozitára na rovnakú úroveň ako index.html, teda priamo do koreňa, nie do priečinka images.
 
+Pri zapnutom filtri, teda keď je aktívny aspoň jeden tag, sa navyše schová aj úvodná fotka Run a sekcia About s indexovým textom, aby ostali viditeľné naozaj len filtrované položky. Keď vypneš všetky tagy, obe sa vrátia späť. Fotografická sekcia nižšie sa filtrovaním neschováva, keďže s tagmi priamo nesúvisí, ak by si chcela, aby sa schovávala tiež, daj vedieť.
+
 ## Chýbajúci súbor
 
 V sekcii Research, pri položke Czech and Slovak Spatial Practice for 99% z roku 2026, stránka odkazuje na images/research/beyond_architecture.jpg. Tento súbor nemám, na mieste obrázka bude prázdno, kým ho nenahráš do priečinka images/research.
+
+## Vlastná doména, lydiagres.com
+
+Toto sa deje na dvoch miestach naraz, v GitHube a u toho, kde je doména registrovaná.
+
+1. Ak ešte nemáš kúpenú doménu lydiagres.com, kúp ju u ľubovoľného registrátora, napríklad Websupport, Namecheap, alebo iný, cena za .com doménu je zvyčajne okolo desať až pätnásť eur ročne.
+2. V repozitári choď do Settings, potom Pages. Do poľa Custom domain napíš lydiagres.com a ulož. GitHub ti tým do repozitára pridá nový súbor s názvom CNAME, netreba sa ho dotýkať.
+3. Prihlás sa do správy domény u registrátora, zvyčajne sekcia DNS records alebo DNS management.
+4. Pridaj štyri A záznamy pre samotnú doménu lydiagres.com, každý smerujúci na jednu z týchto adries, jedna adresa na jeden záznam:
+   185.199.108.153
+   185.199.109.153
+   185.199.110.153
+   185.199.111.153
+5. Ak chceš, aby fungovala aj verzia s www, teda www.lydiagres.com, pridaj ešte CNAME záznam pre www, smerujúci na tvojemeno.github.io.
+6. Počkaj, DNS zmeny sa prejavia od pár minút do dvadsaťštyri hodín.
+7. Vráť sa do Settings, Pages, a keď sa sprístupní možnosť Enforce HTTPS, zaškrtni ju. Môže to chvíľu trvať, kým GitHub vydá certifikát pre novú doménu.
+
+Ak niektorý z týchto krokov nesedí s tým, čo vidíš u svojho registrátora, pošli mi screenshot alebo popíš, čo tam je, poviem ti presne, čo kam zadať.
 
 ## Ak niečo iné nesedí
 
