@@ -42,6 +42,8 @@ Favicon je prefarbený na rovnakú oranžovú.
 
 Fotka k Plánu pre Košice, autor Tibor Czitó, je teraz doplnená priamo v images/research/plan-pre-kosice-2025.jpg. Fotku k výstave Czech and Slovak Spatial Practice for 99%, images/research/beyond_architecture.jpg, si doplnila priamo na GitHube, takže obe fotky z roku 2025 a 2026 sú už na mieste.
 
+V sekcii About pribudol krátky odsek, ktorý hovorí, že väčšina výskumu na stránke vznikla v rámci desiatich rokov v Spolke, a že položky vytvorené so širším tímom Spolky sú tak označené, ostatné sú jej vlastné alebo kreditované individuálne.
+
 ## Ak niečo iné nesedí
 
 Napíš mi presne ktorá položka, poviem ti presne kde to v súbore zmeniť, alebo to rovno upravím ja.
