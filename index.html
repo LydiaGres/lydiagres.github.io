@@ -10,11 +10,11 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    Lýdia Grešáková — portfolio
-   Two practices, one register: research on the left column logic,
+   One typeface, four sizes. Research on a register logic,
    analog photography as a clean editorial grid with a lightbox.
    ============================================================ */
 
@@ -24,11 +24,15 @@
   --ink: #17181A;
   --ink-soft: #55564F;
   --ink-faint: #8B8B80;
-  --accent: #3C2640;
+  --accent: #D3622D;
+  --accent-tint: rgba(211, 98, 45, 0.09);
+  --accent-tint-strong: rgba(211, 98, 45, 0.2);
   --rule: #C9C2AF;
-  --display: 'Space Grotesk', sans-serif;
-  --serif: 'Newsreader', serif;
-  --mono: 'IBM Plex Mono', monospace;
+  --font: 'Space Grotesk', sans-serif;
+  --fs-sm: 12px;
+  --fs-base: 16px;
+  --fs-md: 20px;
+  --fs-lg: 32px;
   --max: 780px;
 }
 
@@ -45,8 +49,9 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--serif);
-  font-size: 18px;
+  font-family: var(--font);
+  font-size: var(--fs-base);
+  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -76,10 +81,11 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
 }
 
+.id-row { display: block; }
+
 .sidebar-top .name {
-  font-family: var(--display);
+  font-size: var(--fs-lg);
   font-weight: 700;
-  font-size: 26px;
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1.15;
@@ -87,17 +93,17 @@ img { max-width: 100%; display: block; }
 }
 
 .sidebar-top .role {
-  font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
   color: var(--ink-soft);
   margin: 0 0 36px;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .nav-link {
   display: block;
-  font-family: var(--mono);
-  font-size: 13px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   text-decoration: none;
@@ -122,21 +128,22 @@ img { max-width: 100%; display: block; }
 }
 
 .tag {
-  font-family: var(--mono);
-  font-size: 10px;
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+  font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--ink-soft);
-  border: 1px solid var(--rule);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  background: var(--accent-tint);
   padding: 3px 7px;
   border-radius: 2px;
-  background: none;
   cursor: pointer;
   transition: background-color 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .tag:hover {
-  border-color: var(--ink-soft);
+  background: var(--accent-tint-strong);
 }
 
 .tag.tag-active {
@@ -146,15 +153,15 @@ img { max-width: 100%; display: block; }
 }
 
 .tags-hint {
-  font-family: var(--mono);
-  font-size: 10px;
+  font-size: var(--fs-sm);
+  font-weight: 400;
   color: var(--ink-faint);
   margin: 8px 0 0;
 }
 
 .sidebar-bottom {
-  font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-sm);
+  font-weight: 400;
   color: var(--ink-faint);
 }
 
@@ -171,13 +178,14 @@ main { padding: 64px 48px 120px; }
 }
 
 .intro p {
-  font-size: 20px;
+  font-size: var(--fs-md);
+  font-weight: 400;
   margin: 0 0 18px;
 }
 
 .eyebrow {
-  font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent);
@@ -188,9 +196,8 @@ main { padding: 64px 48px 120px; }
 section { scroll-margin-top: 24px; }
 
 h2.section-title {
-  font-family: var(--display);
+  font-size: var(--fs-lg);
   font-weight: 700;
-  font-size: 34px;
   text-transform: uppercase;
   letter-spacing: 0.01em;
   margin: 0 0 40px;
@@ -212,41 +219,40 @@ h2.section-title {
 .entry:first-child { padding-top: 0; }
 
 .entry .year {
-  font-family: var(--mono);
-  font-size: 13px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
   color: var(--ink-faint);
   padding-top: 3px;
 }
 
 .entry h3 {
-  font-family: var(--serif);
+  font-size: var(--fs-md);
   font-weight: 600;
-  font-size: 20px;
   margin: 0 0 8px;
   line-height: 1.35;
 }
 
 .entry .kind {
-  font-family: var(--mono);
-  font-size: 10px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
   letter-spacing: 0.05em;
   color: var(--accent);
   text-transform: uppercase;
   margin-right: 8px;
 }
 
-.entry p { margin: 0 0 12px; font-size: 16.5px; color: var(--ink); }
+.entry p { margin: 0 0 12px; font-size: var(--fs-base); font-weight: 400; color: var(--ink); }
 
 .entry .credit {
-  font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-sm);
+  font-weight: 400;
   color: var(--ink-faint);
   margin-top: 8px;
 }
 
 .entry .link {
-  font-family: var(--mono);
-  font-size: 12.5px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
   text-decoration: underline;
   text-decoration-color: var(--rule);
 }
@@ -255,8 +261,8 @@ h2.section-title {
 
 /* year group header inside the list */
 .year-marker {
-  font-family: var(--mono);
-  font-size: 13px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
   color: var(--ink-faint);
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -277,17 +283,16 @@ h2.section-title {
 }
 
 .series-head h3 {
-  font-family: var(--display);
+  font-size: var(--fs-md);
   font-weight: 700;
-  font-size: 22px;
   text-transform: uppercase;
   letter-spacing: 0.01em;
   margin: 0 0 6px;
 }
 
 .series-head .meta {
-  font-family: var(--mono);
-  font-size: 12px;
+  font-size: var(--fs-sm);
+  font-weight: 600;
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -297,7 +302,8 @@ h2.section-title {
 
 .series-head p {
   max-width: 640px;
-  font-size: 16.5px;
+  font-size: var(--fs-base);
+  font-weight: 400;
   color: var(--ink-soft);
   margin: 0;
 }
@@ -346,8 +352,7 @@ h2.section-title {
 }
 
 .frame.empty span {
-  font-family: var(--mono);
-  font-size: 11px;
+  font-size: var(--fs-sm);
   color: var(--ink-faint);
   line-height: 1.5;
 }
@@ -390,8 +395,8 @@ h2.section-title {
   border: 1px solid rgba(237, 234, 225, 0.4);
   background: transparent;
   color: var(--paper);
-  font-family: var(--mono);
-  font-size: 16px;
+  font-family: var(--font);
+  font-size: var(--fs-md);
   line-height: 1;
   cursor: pointer;
   display: flex;
@@ -410,57 +415,16 @@ h2.section-title {
   .lightbox-close { top: 14px; right: 14px; }
 }
 
-/* ---------- Hero plate ---------- */
-
-.hero-plate {
-  max-width: 980px;
-  margin: 0 0 56px;
-}
-
-.hero-plate img {
-  width: 100%;
-  border: 1px solid var(--rule);
-}
-
-.hero-plate figcaption {
-  margin-top: 14px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
-  align-items: baseline;
-}
-
-.hero-plate .cap-text {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 15.5px;
-  color: var(--ink-soft);
-  max-width: 560px;
-}
-
-.hero-plate .cap-meta {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink-faint);
-  white-space: nowrap;
-  text-align: right;
-}
-
-@media (max-width: 640px) {
-  .hero-plate figcaption { grid-template-columns: 1fr; }
-  .hero-plate .cap-meta { text-align: left; }
-}
-
 /* ---------- About ---------- */
 
 .about { max-width: var(--max); }
-.about p { font-size: 18px; }
+.about p { font-size: var(--fs-base); font-weight: 400; }
 
 /* ---------- Footer ---------- */
 
 footer {
-  font-family: var(--mono);
-  font-size: 11px;
+  font-size: var(--fs-sm);
+  font-weight: 400;
   color: var(--ink-faint);
   padding: 40px 48px 64px;
   border-top: 1px solid var(--rule);
@@ -473,19 +437,30 @@ footer {
   .sidebar {
     position: relative;
     height: auto;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
     border-right: none;
     border-bottom: 1px solid var(--rule);
-    padding: 20px 24px;
+    padding: 16px 20px;
+    gap: 10px;
   }
-  .sidebar-top { display: flex; align-items: baseline; gap: 16px; }
-  .sidebar-top .name { font-size: 18px; margin: 0; }
+  .sidebar-top { display: flex; flex-direction: column; gap: 10px; }
+  .id-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+  .sidebar-top .name { font-size: var(--fs-md); margin: 0; }
   .sidebar-top .role { display: none; }
-  .tags, .tags-hint, .sidebar-bottom { display: none; }
+  .sidebar-bottom { display: none; }
   nav { display: flex; gap: 18px; }
   .nav-link { padding: 0; margin: 0; border-left: none; }
+  .tags {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 0;
+    padding-bottom: 4px;
+  }
+  .tag { flex: 0 0 auto; }
+  .tags::-webkit-scrollbar { height: 3px; }
+  .tags::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 2px; }
   main { padding: 40px 24px 80px; }
   .entry { grid-template-columns: 1fr; gap: 8px; }
   .contact-strip { grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -509,16 +484,19 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
 
   <aside class="sidebar">
     <div class="sidebar-top">
-      <p class="name">Lýdia<br>Grešáková</p>
-      <p class="role">Sociologist working on feminist spatial practice, <br>and analog documentary photographer</p>
-      <nav>
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#research">Research</a>
-        <a class="nav-link" href="#photography">Photography</a>
-      </nav>
+      <div class="id-row">
+        <p class="name">Lýdia<br>Grešáková</p>
+        <p class="role">Sociologist working on feminist spatial practice, <br>and analog documentary photographer</p>
+        <nav>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#research">Research</a>
+          <a class="nav-link" href="#photography">Photography</a>
+        </nav>
+      </div>
       <div class="tags" id="tagFilters">
         <button type="button" class="tag" data-tag="researching" aria-pressed="false">Researching</button>
         <button type="button" class="tag" data-tag="speaking" aria-pressed="false">Speaking</button>
+        <button type="button" class="tag" data-tag="teaching" aria-pressed="false">Teaching</button>
         <button type="button" class="tag" data-tag="writing" aria-pressed="false">Writing</button>
         <button type="button" class="tag" data-tag="coordinating" aria-pressed="false">Coordinating</button>
         <button type="button" class="tag" data-tag="exhibiting" aria-pressed="false">Exhibiting</button>
@@ -533,14 +511,6 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
   </aside>
 
   <main>
-
-    <figure class="hero-plate">
-      <img src="images/run.jpg" alt="A herd of young fallow deer running along a hillside inside fenced private land on the outskirts of Bratislava">
-      <figcaption>
-        <span class="cap-text">Run. A herd of young fallow deer flees across fenced private property on the edge of Bratislava, looking for a way out. A moment of frenzy and intrusion, making visible the more than human voices caught inside a landscape of enclosure and privilege, the tension between open space and its privatisation, movement and surveillance.</span>
-        <span class="cap-meta">Kodak T-Max, 35mm<br>Bratislava, edge of the city</span>
-      </figcaption>
-    </figure>
 
     <section id="about">
        <div class="intro">
@@ -562,8 +532,9 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
           <span class="kind">Exhibiting</span>
           <h3>Czech and Slovak Spatial Practice for 99%</h3>
           <p>How to create spaces that truly reflect the needs of the communities concerned. The exhibition offers a view of what spatial practice can mean for the so called 99%, reading space as a living entity made of buildings, social connections, rules, and daily rituals. A record of contemporary Czech and Slovak initiatives, and a call for planning that is inclusive and equitable rather than shaped around the most privileged one percent.</p>
-          <p class="credit">Curators and research authors: Lýdia Grešáková, Zuzana Tabačková</p>
+          <p>Curators and research authors: Lýdia Grešáková, Zuzana Tabačková</p>
           <img src="images/research/beyond_architecture.jpg" alt="Opening of the travelling exhibition at Kafkarna, 2025">
+          <p class="credit">From the opening of the exhibition, © Lukáš Skála &amp; Občina 2025</p>
         </div>
       </div>
        
@@ -595,6 +566,35 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
           <h3>Housing in Times of Crisis</h3>
           <p>Edited volume and book chapter, with Viktória Mravčáková (eds.). Košice: Spolka.</p>
            <a class="link" href="https://kapital-noviny.sk/eshop/produkt/byvanie-v-case-kriz/">Get the book</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2025</div>
+        <div>
+          <span class="kind">Teaching</span>
+          <h3>Architecture and Methods of Fieldwork</h3>
+          <p>MA course, with Viktória Mravčáková, at the invitation of Danica Pišteková. Academy of Fine Arts and Design in Bratislava. The course looked at why going into the field matters for architecture and planning, and how to do it sensitively, critically, and with awareness of one's own position, through ethnography, critical mapping, deep listening, and participatory methods. Emphasis was placed on context, the subjectivity of knowledge, and the power relations that shape space, with student projects showing how good architecture begins with an attentive reading of the field.</p>
+          <p>She also regularly gives guest lectures and crits, among others at the Estonian Academy of Arts in Tallinn, on urban models and positionality with the Urban Studies MA programme, at FUD UJEP in Ústí nad Labem, for students working on housing, at the A1 architecture studio at UMPRUM in Prague, led by Andrew Kiel with Jakub Herz and Viktória Mravčáková, and at the Academy of Fine Arts Vienna, within Petra Hlaváčková and Nicole Sabella's Gender and Space course, both teaching and giving feedback at final presentations. She also teaches Základy sociológie at Comenius University in Bratislava.</p>
+          <a class="link" href="https://www.artun.ee/en/curricula/urban-studies/">Urban Studies MA, Tallinn</a>
+          &nbsp;·&nbsp;
+          <a class="link" href="https://www.akbild.ac.at/en/studies/gender-studies/gender-space">Gender &amp; Space, Vienna</a>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="year">2025</div>
+        <div>
+          <span class="kind">Coordinating</span><span class="kind">Writing</span>
+          <h3>Nine Years with the Plan for Košice</h3>
+          <p>Spolka's longest running project, the new Košice zoning plan, led with Spolka and shaped along the way by many of the people it concerns. The first project of this scale in Slovakia where residents had a genuine voice, showing that participation is about expertise, trust, creativity, and respect for different views, not good PR. Led project management, consulted and facilitated participation over the years, and at the end prepared and edited the accompanying book, Plán pre Košice 2014 to 2025, on how to use the new plan.</p>
+          <a class="link" href="https://planprekosice.sk/">Plán pre Košice</a>
+          &nbsp;·&nbsp;
+          <a class="link" href="https://youtu.be/_gtDpvV0P1Q">Watch the video</a>
+          &nbsp;·&nbsp;
+          <a class="link" href="https://uhakosice.sk/wp-content/uploads/2025/10/Plan-pre-Kosice-2014%E2%80%932025.-Ako-novy-uzemny-plan-meni-nase-mesto-a-zivot-v-nom.pdf">Read the book</a>
+          <img src="images/research/plan-pre-kosice-2025.jpg" alt="From the Plan for Košice project">
+          <p class="credit">Plán pre Košice, © Tibor Czitó 2025</p>
         </div>
       </div>
 
@@ -802,7 +802,7 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
         <div>
           <span class="kind">Coordinating</span><span class="kind">Researching</span>
           <h3>Never Never School</h3>
-          <p>A space for dialogical learning, utopian speculation, and research about cities. Since 2018, Spolka has been building an international platform for people and teams working across artistic, design, and social disciplines, using design as a tool for investigation, imagination, and dialogue about possible futures. It also serves as an incubator, with participants developing projects embedded in the Košice context. Role includes project management, consulting, teaching, exhibiting, publishing, and fundraising.</p>
+          <p>Spolka //A space for dialogical learning, utopian speculation, and research about cities, run by the wider Spolka team, of which she is one part. Since 2018, Spolka has been building an international platform for people and teams working across artistic, design, and social disciplines, using design as a tool for investigation, imagination, and dialogue about possible futures. It also serves as an incubator, with participants developing projects embedded in the Košice context. Within the team, her role has included project management, consulting, teaching, exhibiting, publishing, and fundraising.</p>
           <p>2023, Housing in Times of Crisis: strategies and changing stereotypes of how housing is perceived.<br>
           2021, Caring Cities: interdisciplinary symposium around care in the Czechoslovak context.<br>
           2019, Mapping the In-between: critical mapping of the river Hornád area.<br>
@@ -930,6 +930,19 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
     </div>
   </div>
 
+  <div class="series">
+    <div class="series-head">
+      <h3>Run</h3>
+      <span class="meta">Kodak T-Max, 35mm, Bratislava</span>
+      <p>A herd of young fallow deer flees across fenced private property on the edge of Bratislava, looking for a way out. A moment of frenzy and intrusion, making visible the more than human voices caught inside a landscape of enclosure and privilege, the tension between open space and its privatisation, movement and surveillance.</p>
+    </div>
+    <div class="contact-strip">
+      <button type="button" class="frame" data-full="images/run.jpg">
+        <img src="images/run.jpg" alt="A herd of young fallow deer running along a hillside inside fenced private land on the outskirts of Bratislava" loading="lazy">
+      </button>
+    </div>
+  </div>
+
 </section>
 
   </main>
@@ -999,11 +1012,9 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
   var active = new Set();
 
   function applyFilter() {
-    var heroPlate = document.querySelector('.hero-plate');
     var aboutSection = document.getElementById('about');
     var photographySection = document.getElementById('photography');
     var filtering = active.size > 0;
-    if (heroPlate) { heroPlate.style.display = filtering ? 'none' : ''; }
     if (aboutSection) { aboutSection.style.display = filtering ? 'none' : ''; }
     if (photographySection) {
       var showPhotography = active.size === 0 || active.has('photographing');
@@ -1011,7 +1022,6 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
     }
 
     var nodes = Array.prototype.slice.call(researchSection.children);
-    var markerVisibility = [];
 
     nodes.forEach(function (node) {
       if (node.classList && node.classList.contains('entry')) {
