@@ -18,31 +18,19 @@ Toto je hotová statická stránka, jeden súbor index.html so všetkým vnútri
 5. Klikni Save.
 6. Počkaj jednu až dve minúty, hore sa objaví odkaz na živú stránku.
 
+## Vlastná doména
+
+Návod na pripojenie lydiagres.com sme si už prešli v chate, GitHub Settings, Pages, Custom domain, a potom CNAME a A záznamy u Greenhostu. Ak treba znova, stačí povedať.
+
 ## Čo sa zmenilo v tomto kole
 
-Pribudol tag Teaching, funguje presne ako ostatné, filtruje výskumné položky s daným typom.
+Fotky v každej sérii sa teraz dajú prezerať šípkami vľavo a vpravo priamo v otvorenom náhľade, bez zatvárania. Funguje to aj z klávesnice, šípka vľavo a vpravo, únik cez Escape ostáva rovnaký. Pri sérii s jednou fotkou, teda Run, sa šípky nezobrazujú, keďže tam nie je kam prechádzať.
 
-Do roku 2025 pribudli dve nové položky. Prvá, s tagom Teaching, o kurze Architecture and Methods of Fieldwork na VŠVU, s Viktóriou Mravčákovou, a o pravidelných hosťovských prednáškach, Tallinn, Ústí nad Labem, UMPRUM Praha, Viedeň, a výučbe na Comenius University. Druhá, s tagmi Coordinating a Writing, o projekte Plán pre Košice.
+Favicon je teraz izometrická kocka namiesto zaobleného štvorca, v troch odtieňoch tej istej oranžovej, svetlejšia horná stena, tmavšia bočná.
 
-Pri tejto druhej položke chýba fotka, autor Tibor Czitó, tú si mi v tejto správe neposlala, len text. V súbore je pripravené miesto, images/research/plan-pre-kosice-2025.jpg, pošli mi ju, doplním.
+## Stav fotiek
 
-Pri položke Czech and Slovak Spatial Practice for 99% je teraz riadok o kurátorkách v normálnom texte, nie v drobnom mono štýle, a pod fotkou pribudol nový riadok, že ide o otvorenie výstavy, autor Lukáš Skála a Občina, 2025. Fotka images/research/beyond_architecture.jpg mi ešte stále chýba, tiež pošli, keď budeš mať chvíľu.
-
-Text pri Never Never School teraz jasne hovorí, že ide o širší tím Spolky, ktorého je súčasťou, nie len o jej vlastný projekt.
-
-Úvodná fotka Run už nie je hore nad textom, presunula som ju medzi fotografické série, je teraz posledná, so svojím pôvodným popisom.
-
-Celá stránka teraz používa jedno písmo, Space Grotesk, namiesto troch rôznych, a len štyri veľkosti textu, malú, základnú, strednú a veľkú, namiesto predchádzajúcich mnohých rôznych. Hierarchia je teraz cez hrúbku písma, verzálky a rozostupy, nie cez množstvo veľkostí.
-
-Na mobile je teraz nad menom a navigáciou aj vodorovne posúvateľný riadok s tagmi na filtrovanie, rovnako ako na počítači, len sa cez neho listuje prstom doľava a doprava. About zostáva v hornej navigácii ako predtým.
-
-Farba sa zmenila z fialovej na oranžovú, #D3622D, keďže fialová oproti čiernemu textu nebola dosť odlíšiteľná. Tagy v ľavom paneli majú teraz jemné oranžové podfarbenie aj v pokojnom stave, nielen keď sú aktívne. Fotografická sekcia sa naďalej správa ako keby mala tag Photographing, schová sa pri inom filtri, ukáže sa pri Photographing alebo keď nie je aktívny žiadny tag.
-
-Favicon je prefarbený na rovnakú oranžovú.
-
-Fotka k Plánu pre Košice, autor Tibor Czitó, je teraz doplnená priamo v images/research/plan-pre-kosice-2025.jpg. Fotku k výstave Czech and Slovak Spatial Practice for 99%, images/research/beyond_architecture.jpg, si doplnila priamo na GitHube, takže obe fotky z roku 2025 a 2026 sú už na mieste.
-
-V sekcii About pribudol krátky odsek, ktorý hovorí, že väčšina výskumu na stránke vznikla v rámci desiatich rokov v Spolke, a že položky vytvorené so širším tímom Spolky sú tak označené, ostatné sú jej vlastné alebo kreditované individuálne.
+Obe fotky z roku 2025 a 2026, teda images/research/plan-pre-kosice-2025.jpg a images/research/beyond_architecture.jpg, sú na mieste, jednu doplnila Claude, druhú si nahrala priamo na GitHub.
 
 ## Ak niečo iné nesedí
 

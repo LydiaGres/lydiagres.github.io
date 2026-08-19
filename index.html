@@ -386,10 +386,9 @@ h2.section-title {
   object-fit: contain;
 }
 
-.lightbox-close {
+.lightbox-close,
+.lightbox-nav {
   position: fixed;
-  top: 24px;
-  right: 28px;
   width: 40px;
   height: 40px;
   border: 1px solid rgba(237, 234, 225, 0.4);
@@ -405,14 +404,33 @@ h2.section-title {
   transition: border-color 0.15s;
 }
 
-.lightbox-close:hover, .lightbox-close:focus-visible {
+.lightbox-close:hover, .lightbox-close:focus-visible,
+.lightbox-nav:hover, .lightbox-nav:focus-visible {
   border-color: var(--paper);
   outline: none;
 }
 
+.lightbox-close {
+  top: 24px;
+  right: 28px;
+}
+
+.lightbox-nav {
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+
+.lightbox-nav[hidden] { display: none; }
+
 @media (max-width: 640px) {
   .lightbox { padding: 20px; }
   .lightbox-close { top: 14px; right: 14px; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
 }
 
 /* ---------- About ---------- */
@@ -953,8 +971,10 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
 </footer>
 
 <div class="lightbox" id="lightbox" aria-hidden="true">
+  <button type="button" class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#10094;</button>
   <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close image">&#10005;</button>
   <img id="lightboxImg" src="" alt="">
+  <button type="button" class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">&#10095;</button>
 </div>
 
 <script>
@@ -962,12 +982,29 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = document.getElementById('lightboxImg');
   var closeBtn = document.getElementById('lightboxClose');
+  var prevBtn = document.getElementById('lightboxPrev');
+  var nextBtn = document.getElementById('lightboxNext');
   var lastFocused = null;
+  var seriesFrames = [];
+  var currentIndex = 0;
 
-  function openLightbox(src, alt) {
+  function setImage(index) {
+    currentIndex = index;
+    var frame = seriesFrames[currentIndex];
+    var img = frame.querySelector('img');
+    lightboxImg.src = frame.getAttribute('data-full');
+    lightboxImg.alt = img ? img.alt : '';
+  }
+
+  function openLightbox(frame) {
     lastFocused = document.activeElement;
-    lightboxImg.src = src;
-    lightboxImg.alt = alt || '';
+    var strip = frame.closest('.contact-strip');
+    seriesFrames = strip ? Array.prototype.slice.call(strip.querySelectorAll('.frame[data-full]')) : [frame];
+    var startIndex = seriesFrames.indexOf(frame);
+    var multi = seriesFrames.length > 1;
+    prevBtn.hidden = !multi;
+    nextBtn.hidden = !multi;
+    setImage(startIndex >= 0 ? startIndex : 0);
     lightbox.classList.add('open');
     lightbox.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -982,23 +1019,35 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
     if (lastFocused) { lastFocused.focus(); }
   }
 
+  function showPrev() {
+    if (seriesFrames.length < 2) return;
+    setImage((currentIndex - 1 + seriesFrames.length) % seriesFrames.length);
+  }
+
+  function showNext() {
+    if (seriesFrames.length < 2) return;
+    setImage((currentIndex + 1) % seriesFrames.length);
+  }
+
   document.querySelectorAll('.frame[data-full]').forEach(function (frame) {
     frame.addEventListener('click', function () {
-      var img = frame.querySelector('img');
-      openLightbox(frame.getAttribute('data-full'), img ? img.alt : '');
+      openLightbox(frame);
     });
   });
 
   closeBtn.addEventListener('click', closeLightbox);
+  prevBtn.addEventListener('click', showPrev);
+  nextBtn.addEventListener('click', showNext);
 
   lightbox.addEventListener('click', function (e) {
     if (e.target === lightbox) { closeLightbox(); }
   });
 
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && lightbox.classList.contains('open')) {
-      closeLightbox();
-    }
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') { closeLightbox(); }
+    if (e.key === 'ArrowLeft') { showPrev(); }
+    if (e.key === 'ArrowRight') { showNext(); }
   });
 })();
 </script>
