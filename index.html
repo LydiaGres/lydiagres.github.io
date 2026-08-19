@@ -515,7 +515,7 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
         <button type="button" class="tag" data-tag="researching" aria-pressed="false">Researching</button>
         <button type="button" class="tag" data-tag="speaking" aria-pressed="false">Speaking</button>
         <button type="button" class="tag" data-tag="teaching" aria-pressed="false">Teaching</button>
-        <button type="button" class="tag" data-tag="Writing & Editing" aria-pressed="false">Writing & Editing</button>
+        <button type="button" class="tag" data-tag="writing & editing" aria-pressed="false">Writing &amp; Editing</button>
         <button type="button" class="tag" data-tag="coordinating" aria-pressed="false">Coordinating</button>
         <button type="button" class="tag" data-tag="exhibiting" aria-pressed="false">Exhibiting</button>
         <button type="button" class="tag" data-tag="photographing" aria-pressed="false">Photographing</button>
@@ -573,7 +573,7 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
       <div class="entry">
         <div class="year">2025</div>
         <div>
-          <span class="kind">Writing & Editing</span>
+          <span class="kind">Writing &amp; Editing</span>
           <h3>Staying with the Trouble: Feminist Spatial Practices and Hybrid Agency in Slovakia and the Czech Republic</h3>
           <p>Article, <em>Dimensions. Journal of Architectural Knowledge.</em></p>
          <a class="link" href="https://www.transcript-verlag.de/chunk_detail_seite.php?doi=10.14361%2Fdak-2024-0805">Read the article</a>
@@ -583,7 +583,7 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
       <div class="entry">
         <div class="year">2025</div>
         <div>
-          <span class="kind">Writing & Editing</span>
+          <span class="kind">Writing &amp; Editing</span>
           <h3>Drawing common futures: with mapping workshops and images towards climate caring spatial practice in Slovakia</h3>
           <p>Book chapter, with Viktória Mravčáková. In: Renner, Dietzsch, Tschoepe, Käser, Balzan (eds.), <em>Participatory Images: Fostering Dialogue Through Image Making in the Context of Urban Planning</em>. Bielefeld: Transcript Verlag.</p>
         </div>
@@ -592,7 +592,7 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
       <div class="entry">
         <div class="year">2025</div>
         <div>
-          <span class="kind">Writing & Editing</span>
+          <span class="kind">Writing &amp; Editing</span>
           <h3>Housing in Times of Crisis</h3>
           <p>Edited volume and book chapter, with Viktória Mravčáková (eds.). Košice: Spolka.</p>
            <a class="link" href="https://kapital-noviny.sk/eshop/produkt/byvanie-v-case-kriz/">Get the book</a>
@@ -612,7 +612,7 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
       <div class="entry">
         <div class="year">2025</div>
         <div>
-          <span class="kind">Coordinating</span><span class="kind">Writing</span>
+          <span class="kind">Coordinating</span><span class="kind">Writing &amp; Editing</span>
           <h3>Nine Years with the Plan for Košice</h3>
           <p>Spolka //Spolka's longest running project, the new Košice zoning plan, led with Spolka and shaped along the way by many of the people it concerns. The first project of this scale in Slovakia where residents had a genuine voice, showing that participation is about expertise, trust, creativity, and respect for different views, not good PR. Led project management, consulted and facilitated participation over the years, and at the end prepared and edited the accompanying book, Plán pre Košice 2014 to 2025, on how to use the new plan.</p>
           <a class="link" href="https://planprekosice.sk/">Plán pre Košice</a>
@@ -751,7 +751,7 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
       <div class="entry">
         <div class="year">2021</div>
         <div>
-          <span class="kind">Researching</span><span class="kind">Writing & Editing</span><span class="kind">Exhibiting</span>
+          <span class="kind">Researching</span><span class="kind">Writing &amp; Editing</span><span class="kind">Exhibiting</span>
           <h3>Mestometer (City Meter)</h3>
           <p>Spolka //An interdisciplinary project combining urbanism, art, game design, and sociology in a playful exhibition on land use planning from the local perspective in Košice. Co-edited a bilingual publication: <em>Playing Mestometer: Why Do Cities Need a Zoning Plan?</em> Košice: CIKE, Spolka.</p>
           <a class="link" href="https://www.youtube.com/watch?v=Tm8AX6BJm_o">Watch the video</a>
@@ -798,7 +798,7 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
       <div class="entry">
         <div class="year">2020</div>
         <div>
-          <span class="kind">Writing & Editing</span>
+          <span class="kind">Writing &amp; Editing</span>
           <h3>Mapping with Care as an Outline for Post-neoliberal Architecture Methodologies: Tools of the Never Never School</h3>
           <p>Article, with Zuzana Tabačková and Zuzana Révészová. <em>Architektúra &amp; Urbanizmus</em> 54 (1 to 2): 6 to 19.</p>
         </div>
@@ -807,7 +807,7 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
       <div class="entry">
         <div class="year">2020</div>
         <div>
-          <span class="kind">Writing & Editing</span>
+          <span class="kind">Writing &amp; Editing</span>
           <h3>Mapping the In-Between. Interdisciplinary Methods for Envisioning Other Futures</h3>
           <p>Edited volume, with Zuzana Tabačková and Spolka (eds.). Košice: Spolka.</p>
         </div>
@@ -1108,7 +1108,7 @@ a:focus-visible, .frame:focus-visible, .tag:focus-visible {
 
   tagButtons.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var key = btn.getAttribute('data-tag');
+      var key = (btn.getAttribute('data-tag') || '').trim().toLowerCase();
       if (active.has(key)) {
         active.delete(key);
         btn.classList.remove('tag-active');
